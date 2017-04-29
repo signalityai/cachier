@@ -90,3 +90,4 @@ ENV/
 
 # added by shaypal5@gmail.com
 cachier_test_mongo_cred.yml
+.vscode/*
