@@ -216,3 +216,10 @@ class _PickleCore(_BaseCore):
             for key in cache:
                 cache[key]['being_calculated'] = False
             self._save_cache(cache)
+
+    def new_cache_dir(self, cache_dir):
+        self.cache_dir = cache_dir
+        self.expended_cache_dir = os.path.expanduser(self.cache_dir)
+        self.cache_fname = None
+        self.cache_fpath = None
+        self._reload_cache()

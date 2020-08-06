@@ -206,6 +206,9 @@ def cachier(
             """Marks all entries in this cache as not being calculated."""
             core.clear_being_calculated()
 
+        def new_cache_dir(cache_dir):
+            core.new_cache_dir(cache_dir)
+
         def cache_dpath():
             """Returns the path to the cache dir, if exists; None if not."""
             try:
@@ -216,6 +219,7 @@ def cachier(
         func_wrapper.clear_cache = clear_cache
         func_wrapper.clear_being_calculated = clear_being_calculated
         func_wrapper.cache_dpath = cache_dpath
+        func_wrapper.new_cache_dir = new_cache_dir
         return func_wrapper
 
     return _cachier_decorator
